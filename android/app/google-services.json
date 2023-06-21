@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "790305346030",
+    "project_id": "geonotes-da3a3",
+    "storage_bucket": "geonotes-da3a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790305346030:android:6f59beb8ee940e6656feff",
+        "android_client_info": {
+          "package_name": "io.rylero.geonotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790305346030-01vcurj5vbdfuaon10ef4d9mohlb26vc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.rylero.geonotes",
+            "certificate_hash": "bdd752fc835cb8a392d58085b6d62b209dc87d3d"
+          }
+        },
+        {
+          "client_id": "790305346030-tjdfrapesrc3orvaqd50ddtvl60s9an3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAWb4yQVa9qdoHbgSELM1Pv6oH6LNY_fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790305346030-hflj34sg3qlqkkp4rje7o6l7n01e66tt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "790305346030-pe3hhrhk39flo3kqj2rigfomjkti8k1p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.rylero.geonotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
