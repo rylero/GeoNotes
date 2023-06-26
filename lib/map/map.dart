@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geonotes/shared/bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../services/models.dart';
 
@@ -17,10 +18,11 @@ class _MapScreenState extends State<MapScreen> {
 
   Set<Marker> markers = Set();
 
-  LatLng startingLocation = const LatLng(27.7089427, 85.3086209);
+  LatLng startingLocation = const LatLng(37.221340, -121.979637);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
+    maptest();
   }
 
   @override
@@ -42,8 +44,8 @@ class _MapScreenState extends State<MapScreen> {
       body: GoogleMap(
         onMapCreated: _onMapCreated,
         initialCameraPosition: const CameraPosition(
-          target: LatLng(27.7089427, 85.3086209),
-          zoom: 10.0,
+          target: LatLng(37.221340, -121.979637),
+          zoom: 11.0,
         ),
         zoomGesturesEnabled: true,
         mapType: MapType.normal,
@@ -54,4 +56,35 @@ class _MapScreenState extends State<MapScreen> {
       ),
     );
   }
+}
+
+void maptest() async {
+  bool servicestatus = await Geolocator.isLocationServiceEnabled();
+
+  if (servicestatus) {
+    print("GPS service is enabled");
+  } else {
+    print("GPS service is disabled.");
+  }
+
+  LocationPermission permission = await Geolocator.checkPermission();
+
+  if (permission == LocationPermission.denied) {
+    print("GeoLocation Denied");
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      print('Location permissions are denied');
+    } else if (permission == LocationPermission.deniedForever) {
+      print("'Location permissions are permanently denied");
+    } else {
+      print("GPS Location service is granted");
+    }
+  } else {
+    print("GPS Location permission granted.");
+  }
+
+  Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high);
+  print(position.longitude);
+  print(position.latitude);
 }

@@ -52,6 +52,10 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void loginMethodWithNavigation() {
+      loginMethod(context);
+    }
+
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       child: ElevatedButton.icon(
@@ -64,7 +68,7 @@ class LoginButton extends StatelessWidget {
           padding: const EdgeInsets.all(24),
           backgroundColor: color,
         ),
-        onPressed: () => loginMethod(),
+        onPressed: loginMethodWithNavigation,
         label: Text(text, textAlign: TextAlign.center),
       ),
     );

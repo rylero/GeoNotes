@@ -7,6 +7,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("In Profile build");
     return Scaffold(
       body: Center(
         child: Center(

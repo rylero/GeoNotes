@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:geonotes/services/auth.dart';
-import 'package:geonotes/services/models.dart';
+import 'package:dave_geo_notes/services/auth.dart';
+import 'package:dave_geo_notes/services/models.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -10,6 +10,7 @@ class FirestoreService {
   Stream<List<Note>> streamNotes() {
     return AuthService().userStream.switchMap((user) {
       if (user != null) {
+        print(user.uid);
         var notesRef = _db.collection("notes");
         var query = notesRef.where("user", isEqualTo: user.uid);
         return Stream.fromFuture(query.get().then((querySnapshot) {
@@ -20,6 +21,7 @@ class FirestoreService {
           return notes;
         }));
       } else {
+        print("No user");
         return Stream.fromIterable([
           [Note()]
         ]);
