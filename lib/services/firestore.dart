@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:dave_geo_notes/services/auth.dart';
-import 'package:dave_geo_notes/services/models.dart';
+import 'package:geonotes/services/auth.dart';
+import 'package:geonotes/services/models.dart';
 
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
