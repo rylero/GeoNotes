@@ -130,7 +130,7 @@ packages:
     source: hosted
     version: "5.5.3"
   firebase_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core
       sha256: a4a99204da264a0aa9d54a332ea0315ce7b0768075139c77abefe98093dd98be
@@ -162,10 +162,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: aeb0b80a8b3709709c9cc496cdc027c5b3216796bc0af0ce1007eaf24464fd4c
+      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -192,6 +192,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.4.0"
+  geoflutterfire:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "7793751d6bc6aee39d9ad3c47ec2643f15c4ab61"
+      url: "https:///github.com/dleroy/GeoFlutterFire.git"
+    source: git
+    version: "3.0.3"
   geolocator:
     dependency: "direct main"
     description:
