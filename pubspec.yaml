@@ -43,11 +43,14 @@ dependencies:
   rxdart: ^0.27.7
   json_annotation: ^4.8.1
   geolocator: ^9.0.2
+  geoflutterfire:
+    git:
+      url: https:///github.com/dleroy/GeoFlutterFire.git
+  firebase_core: ^2.14.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
