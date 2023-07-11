@@ -7,28 +7,35 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("In Profile build");
     return Scaffold(
-      body: Center(
-        child: Center(
-          child: Column(
-            children: [
-              TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.blue,
-                ),
-                onPressed: () {
-                  AuthService().signOut();
-                  Navigator.pushNamed(context, "/login");
-                },
-                child: const Text("Sign Out"),
-              ),
-            ],
-          ),
-        ),
-      ),
+      body: ProfileButton(),
       bottomNavigationBar: const BottomNavBar(
         itemIndex: 3,
+      ),
+    );
+  }
+}
+
+class ProfileButton extends StatelessWidget {
+  const ProfileButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.blue,
+            ),
+            onPressed: () {
+              AuthService().signOut();
+              Navigator.pushNamed(context, "/login");
+            },
+            child: const Text("Sign Out"),
+          ),
+        ],
       ),
     );
   }

@@ -18,10 +18,17 @@ class _MapScreenState extends State<MapScreen> {
 
   Set<Marker> markers = Set();
 
-  LatLng startingLocation = const LatLng(37.221340, -121.979637);
+  void setLocationToGeoLocation() async {}
 
-  void _onMapCreated(GoogleMapController controller) {
+  void _onMapCreated(GoogleMapController controller) async {
     mapController = controller;
+
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.bestForNavigation);
+    print(position.latitude);
+    print(position.longitude);
+    mapController.moveCamera(
+        CameraUpdate.newLatLng(LatLng(position.latitude, position.longitude)));
   }
 
   @override
@@ -44,7 +51,8 @@ class _MapScreenState extends State<MapScreen> {
         onMapCreated: _onMapCreated,
         initialCameraPosition: const CameraPosition(
           target: LatLng(37.221340, -121.979637),
-          zoom: 11.0,
+          zoom: 14.0,
+          tilt: 75.0,
         ),
         zoomGesturesEnabled: true,
         mapType: MapType.normal,
