@@ -26,6 +26,11 @@ class AuthService {
     }
   }
 
+  currentUser() {
+    final uid = user?.uid.toString();
+    return uid;
+  }
+
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
   }
