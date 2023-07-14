@@ -73,7 +73,13 @@ class CreateScreenState extends State<CreateScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final title = 'Create a GeoNote';
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: Colors.blue,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
