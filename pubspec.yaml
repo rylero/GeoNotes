@@ -47,6 +47,7 @@ dependencies:
     git:
       url: https:///github.com/dleroy/GeoFlutterFire.git
   firebase_core: ^2.14.0
+  location: ^5.0.0
 
 dev_dependencies:
   flutter_test:
