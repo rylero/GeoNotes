@@ -7,7 +7,6 @@ import 'package:geonotes/services/models.dart';
 import 'package:geonotes/theme.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
-import 'package:geonotes/shared/bottom_nav_bar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
