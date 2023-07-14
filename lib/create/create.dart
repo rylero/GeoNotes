@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geonotes/shared/bottom_nav_bar.dart';
 import 'package:geonotes/services/auth.dart';
@@ -19,7 +16,6 @@ class CreateScreen extends StatefulWidget {
 class CreateScreenState extends State<CreateScreen> {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   Geoflutterfire geo = Geoflutterfire();
-  final _formKey = GlobalKey<FormState>(debugLabel: '_EnterNoteState');
   final _textController = TextEditingController();
 
   /// Determine the current position of the device.
@@ -105,7 +101,7 @@ class CreateScreenState extends State<CreateScreen> {
                     },
                 color: Colors.blue,
                 child:
-                    const Text('Submit', style: TextStyle(color: Colors.white)))
+                    const Text('Create', style: TextStyle(color: Colors.white)))
           ],
         ),
       ),
