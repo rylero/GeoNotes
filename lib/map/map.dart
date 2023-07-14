@@ -25,8 +25,6 @@ class _MapScreenState extends State<MapScreen> {
 
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.bestForNavigation);
-    print(position.latitude);
-    print(position.longitude);
     mapController.moveCamera(
         CameraUpdate.newLatLng(LatLng(position.latitude, position.longitude)));
   }
@@ -57,6 +55,9 @@ class _MapScreenState extends State<MapScreen> {
         zoomGesturesEnabled: true,
         mapType: MapType.normal,
         markers: markers,
+        myLocationEnabled: true,
+        compassEnabled: true,
+        zoomControlsEnabled: true,
       ),
       bottomNavigationBar: const BottomNavBar(
         itemIndex: 0,
