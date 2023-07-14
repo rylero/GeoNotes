@@ -10,7 +10,7 @@ var appRoutes = <String, WidgetBuilder>{
   '/': (context) => const IndexScreen(),
   '/login': (context) => const LoginScreen(),
   '/map': (context) => const MapScreen(),
-  '/notes': (context) => const NotesScreen(),
+  '/notes': (context) => NotesScreen(),
   '/create': (context) => CreateScreen(),
   '/profile': (context) => const ProfileScreen(),
 };
