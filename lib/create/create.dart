@@ -64,10 +64,13 @@ class CreateScreenState extends State<CreateScreen> {
     Position position = await _determinePosition();
     GeoFirePoint point =
         geo.point(latitude: position.latitude, longitude: position.longitude);
-    firestore.collection('locations').add({
+    firestore
+        .collection('users')
+        .doc(AuthService().currentUser())
+        .collection('geonotes')
+        .add({
       'position': point.data,
       'note': userNote,
-      'user': AuthService().currentUser(),
     });
   }
 
