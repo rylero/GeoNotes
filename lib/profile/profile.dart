@@ -7,7 +7,12 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final title = "User Profile";
     return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: Colors.blue,
+      ),
       body: ProfileButton(),
       bottomNavigationBar: const BottomNavBar(
         itemIndex: 3,
@@ -21,21 +26,22 @@ class ProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          TextButton(
-            style: TextButton.styleFrom(
-              foregroundColor: Colors.blue,
-            ),
-            onPressed: () {
-              AuthService().signOut();
-              Navigator.pushNamed(context, "/login");
-            },
-            child: const Text("Sign Out"),
-          ),
-        ],
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            MaterialButton(
+                onPressed: () {
+                  AuthService().signOut();
+                  Navigator.pushNamed(context, "/login");
+                },
+                color: Colors.blue,
+                child: const Text('Sign Out',
+                    style: TextStyle(color: Colors.white))),
+          ],
+        ),
       ),
     );
   }
